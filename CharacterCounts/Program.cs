@@ -1,4 +1,6 @@
-﻿namespace CharacterCounts
+﻿using System.Net.Mail;
+
+namespace CharacterCounts
 {
     internal class Program
     {
@@ -22,7 +24,8 @@
 
             foreach (var item in uniqueName)
             {
-                int count = name.Count(x => x == item);
+                //linq
+                int count = name.Count(ali => ali == item);
                 Console.WriteLine(item + " " + count);
             }
 

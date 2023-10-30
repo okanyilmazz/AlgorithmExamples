@@ -15,11 +15,20 @@
             char[] wordList = word.ToCharArray();
             char[] wordList2 = word2.ToCharArray();
 
+            bool isAnagram = true;
             Array.Sort(wordList);
             Array.Sort(wordList2);
 
+            for (int i = 0; i < wordList.Length; i++)
+            {
+                if (wordList[i] != wordList2[i])
+                {
+                    isAnagram = false;
+                    break;
+                }
+            }
 
-            if (wordList[0] == wordList2[0])
+            if(isAnagram)
             {
                 Console.WriteLine("{0} and {1} is a Anagram Word.", word, word2);
             }
@@ -29,7 +38,6 @@
             }
 
             Console.ReadLine();
-
-        }
+        } 
     }
 }
